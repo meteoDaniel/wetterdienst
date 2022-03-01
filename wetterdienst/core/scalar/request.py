@@ -119,6 +119,8 @@ class ScalarRequestCore(Core):
         """Accessor for dataset, by default the resolution is used as we expect
         datasets to be divided in resolutions but for some e.g. DWD Mosmix
         datasets are divided in another way (SMALL/LARGE in this case)"""
+        if self.resolution == Resolution.DYNAMIC:
+            return "ALL"
         return self.resolution.name
 
     @property

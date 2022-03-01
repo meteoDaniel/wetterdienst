@@ -17,6 +17,7 @@ from wetterdienst.provider.eccc.observation.metadata.parameter import (
 from wetterdienst.provider.eccc.observation.metadata.unit import EcccObservationUnit
 from wetterdienst.provider.noaa.ghcn import NoaaGhcnParameter
 from wetterdienst.provider.noaa.ghcn.unit import NoaaGhcnUnit
+from wetterdienst.provider.wsv.pegel.api import WsvPegelParameter, WsvPegelUnit
 
 ORIGIN_UNITS = [unit.value for unit in OriginUnit]
 SI_UNITS = [unit.value for unit in SIUnit]
@@ -33,6 +34,8 @@ SI_UNITS = [unit.value for unit in SIUnit]
         (EcccObservationUnit, False),
         (NoaaGhcnParameter, False),
         (NoaaGhcnUnit, False),
+        (WsvPegelParameter, False),
+        (WsvPegelUnit, False),
     ),
 )
 def test_parameter_names(parameter_enum, is_ds_tree):
